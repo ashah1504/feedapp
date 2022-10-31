@@ -1,0 +1,27 @@
+{% extends 'feedapp/base.html' %}
+{% block title %}Home{% endblock %}
+{% block main_title %}Public Feed{% endblock %}
+{% block sub_title %}Leave a message for everyone to see!{% endblock %}
+{% block content %} <AmpContent>
+<form method="POST">
+  <article class="media">
+    <div class="media-content">
+      <div class="field">
+        <p class="control">
+          {% csrf_token %}
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              {{ form.text }}
+            </div>
+            <div class="control">
+              <button class="button is-info">Submit</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </article>
+</form>
+
+</AmpContent>
+{% endblock %}
+
